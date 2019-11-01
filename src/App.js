@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Navbar from "./components/layout/Navbar";
+import Dashboard from "./components/dashboard/Dashboard";
 
 
 function App() {
@@ -9,6 +10,9 @@ function App() {
       <Router>
           <div className="App">
               <Navbar/>
+              <Switch>
+                  <Route path='/' component={ Dashboard }/>
+              </Switch>
           </div>
       </Router>
   );
