@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import useSignUpForm from "../../CustomHooks";
 
-class SignUp extends Component {
+class SignUp extends Component{
     state = {
         email: '',
         password: '',
         firstName: '',
         lastName: '',
     }
+
 
     handleChange = (e) => {
         this.setState({
@@ -49,5 +49,48 @@ class SignUp extends Component {
         );
     }
 }
+
+/*function SignUp(props) {
+
+
+    const [state, setState] = useState(initState);
+
+    function handleChange(e) {
+        console.log(e)
+        setState(state => ({...state, [e.target.id]: [e.target.value]}))
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(initState)
+    }
+
+    return (
+        <div className='container'>
+            <form onSubmit={handleSubmit} className="white">
+                <h5 className='grey-text text-darken-3'>Sign Up</h5>
+                <div className="input-field">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" id='email' onChange={handleChange}/>
+                </div>
+                <div className="input-field">
+                    <label htmlFor="password">Password</label>
+                    <input type="password" id='password' onChange={handleChange}/>
+                </div>
+                <div className="input-field">
+                    <label htmlFor="firstName">First name</label>
+                    <input type="text" id='firstName' onChange={handleChange}/>
+                </div>
+                <div className="input-field">
+                    <label htmlFor="lastName">Last name</label>
+                    <input type="text" id='lastName' onChange={handleChange}/>
+                </div>
+                <div className="input-field">
+                    <button className="btn blue lighten-1 z-depth-2">Login</button>
+                </div>
+            </form>
+        </div>
+    );
+}*/
 
 export default SignUp;
