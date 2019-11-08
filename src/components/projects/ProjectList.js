@@ -10,8 +10,8 @@ const ProjectsList = ({projects}) => {
                 /*if there are projects map through them, if not don't map through them*/
                 projects && projects.map(project => {
                     return (
-                        <Link to={'/project/' + project.id}>
-                            <ProjectSummary project={project} key={project.id}/>
+                        <Link to={'/project/' + project.id} key={project.id}>
+                            <ProjectSummary project={project}/>
                         </Link>
                     )
                 })

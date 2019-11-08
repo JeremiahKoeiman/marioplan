@@ -26,7 +26,7 @@ const rrfConfig = {
 
 const middleware = [
     thunk.withExtraArgument({ getFirestore }),
-    thunk.withExtraArgument({ getFirebase }),
+    thunk.withExtraArgument({ getFirebase })
 ]
 
 
