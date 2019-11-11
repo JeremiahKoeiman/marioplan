@@ -1,12 +1,17 @@
+import {getFirebase} from "react-redux-firebase";
+import {getFirestore} from "redux-firestore";
+
 export const createProject = (project) => {
-    return (dispatch, getState, { getFirebase, getFirestore }) => {
+    return (dispatch, getState) => {
         // make async call to db
-        const firestore = getFirestore()
+        const firestore = getFirestore();
+        const profile = getState().firebase.profile;
+        const authorId = getState().firebase.auth.uid;
         firestore.collection('projects').add({
             ...project,
-            authorFirstName: 'mario',
-            authorLastName: 'yoshi',
-            authorId: 123,
+            authorFirstName: profile.firstName,
+            authorLastName: profile.lastName,
+            authorId: authorId,
             createdAt: new Date()
         })
             .then(() => {
