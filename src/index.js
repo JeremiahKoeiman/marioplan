@@ -10,6 +10,7 @@ import {createFirestoreInstance, getFirestore, reduxFirestore} from "redux-fires
 import {getFirebase, ReactReduxFirebaseProvider} from "react-redux-firebase";
 import firebase from "firebase/app";
 // eslint-disable-next-line
+import fbConfig from './config/fbConfig' // --> if you remove this, it won't work
 import {applyMiddleware, compose, createStore} from "redux";
 import rootReducer from "./store/reducers/rootReducer";
 
