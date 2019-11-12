@@ -8,7 +8,6 @@ import Notifications from "./Notifications";
 import ProjectsList from "../projects/ProjectList";
 
 function Dashboard(props) {
-    //console.log(props);
     const { projects, auth, notifications } = props;
     if (!auth.uid) return <Redirect to={'/signin'} />
 
@@ -27,7 +26,6 @@ function Dashboard(props) {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return {
         projects: state.firestore.ordered.projects,
         auth: state.firebase.auth,
