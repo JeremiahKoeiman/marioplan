@@ -2,7 +2,7 @@ import {getFirebase} from "react-redux-firebase";
 import {getFirestore} from "redux-firestore";
 
 export const signIn = (credentials) => {
-    return (dispatch, getState) => {
+    return (dispatch) => {
 
         const firebase = getFirebase()
 
@@ -20,7 +20,7 @@ export const signIn = (credentials) => {
 }
 
 export const signOut = () => {
-    return (dispatch, getState) => {
+    return (dispatch) => {
         const firebase = getFirebase()
 
         firebase.auth().signOut()
@@ -34,7 +34,7 @@ export const signOut = () => {
 }
 
 export const signUp = (newUser) => {
-    return (dispatch, getState) => {
+    return (dispatch) => {
         const firebase = getFirebase()
         const firestore = getFirestore()
 
@@ -50,7 +50,7 @@ export const signUp = (newUser) => {
         }).then(() => {
             dispatch({type: 'SIGNUP_SUCCESS'})
         }).catch((error) => {
-            dispatch({ type: 'SIGNUP_ERROR', error })
+            dispatch({type: 'SIGNUP_ERROR', error})
         })
     }
 }

@@ -4,14 +4,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import { Provider } from "react-redux";
+import {Provider} from "react-redux";
 import thunk from "redux-thunk";
 import {createFirestoreInstance, getFirestore, reduxFirestore} from "redux-firestore";
-import {ReactReduxFirebaseProvider, getFirebase} from "react-redux-firebase";
+import {getFirebase, ReactReduxFirebaseProvider} from "react-redux-firebase";
 import firebase from "firebase/app";
-
 // eslint-disable-next-line
-import fbConfig from './config/fbConfig' // --> if you remove this, it won't work
 import {applyMiddleware, compose, createStore} from "redux";
 import rootReducer from "./store/reducers/rootReducer";
 
@@ -23,8 +21,8 @@ const rrfConfig = {
 }
 
 const middleware = [
-    thunk.withExtraArgument({ getFirestore }),
-    thunk.withExtraArgument({ getFirebase })
+    thunk.withExtraArgument({getFirestore}),
+    thunk.withExtraArgument({getFirebase})
 ]
 
 
@@ -59,7 +57,7 @@ authReadyPromise.then(() => {
     ReactDOM.render(
         <Provider store={store}>
             <ReactReduxFirebaseProvider {...rrfProps}>
-                <App />
+                <App/>
             </ReactReduxFirebaseProvider>
         </Provider>,
         document.getElementById('root')

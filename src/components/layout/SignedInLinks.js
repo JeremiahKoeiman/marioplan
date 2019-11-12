@@ -1,8 +1,8 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { connect } from 'react-redux'
+import {NavLink} from 'react-router-dom'
+import {connect} from 'react-redux'
 
-import { signOut } from "../../store/actions/authActions";
+import {signOut} from "../../store/actions/authActions";
 
 const SignedInLinks = (props) => {
     return (

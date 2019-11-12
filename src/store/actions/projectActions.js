@@ -1,4 +1,3 @@
-import {getFirebase} from "react-redux-firebase";
 import {getFirestore} from "redux-firestore";
 
 export const createProject = (project) => {
@@ -15,10 +14,10 @@ export const createProject = (project) => {
             createdAt: new Date()
         })
             .then(() => {
-                dispatch({ type:  'CREATE_PROJECT', project })
+                dispatch({type: 'CREATE_PROJECT', project})
             })
             .catch((error) => {
-                dispatch({ type:  'CREATE_PROJECT_ERROR', error })
+                dispatch({type: 'CREATE_PROJECT_ERROR', error})
             })
     }
 }
